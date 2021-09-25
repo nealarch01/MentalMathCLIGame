@@ -202,6 +202,10 @@ void answerExpr(std::queue<expression> &exprQueue) {
         std::cout << "Current queue size: " << exprQueue.size() << " /12" << std::endl; 
         std::cout << exprQueue.front() << " = ";
         std::cin >> userInput;
+        if(std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore();
+        }
         clearScreen();
         // if the user enters the right input
         if(userInput == exprQueue.front().getResult()) {
